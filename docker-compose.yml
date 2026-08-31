@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: matchapi
+      POSTGRES_PASSWORD: matchapi123
+      POSTGRES_DB: matchapi
+    ports:
+      - "5432:5432"
+    volumes:
+      - matchapi_data:/var/lib/postgresql/data
+
+volumes:
+  matchapi_data:
