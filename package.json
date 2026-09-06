@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch --no-warnings server.js"
+    "dev": "node --watch --no-warnings server.js",
+    "migrate": "node-pg-migrate"
   },
   "keywords": [
     "Nodejs",
@@ -21,5 +22,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "node-pg-migrate": "^9.0.0"
   }
 }
