@@ -1,8 +1,11 @@
 import express from "express";
 import { pool } from "./db.js";
+import usuarioRoutes from "./routes/usuarios.routes.js";
 
 const app = express();
 const PORT = 3000;
+
+app.use(express.json());
 
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });
@@ -17,6 +20,8 @@ app.get("/health/db", async (req, res) => {
     res.status(500).json({ status: "error", database: "disconnected" });
   }
 });
+
+app.use("/usuarios", usuarioRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
