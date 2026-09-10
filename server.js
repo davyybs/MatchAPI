@@ -1,6 +1,7 @@
 import express from "express";
 import { pool } from "./db.js";
 import usuarioRoutes from "./routes/usuarios.routes.js";
+import gruposRoute from "./routes/grupos.routes.js";
 
 const app = express();
 const PORT = 3000;
@@ -22,6 +23,7 @@ app.get("/health/db", async (req, res) => {
 });
 
 app.use("/usuarios", usuarioRoutes);
+app.use("/grupos", gruposRoute);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
