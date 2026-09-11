@@ -32,3 +32,12 @@ Content-Type: application/json
   "local": "Campo da Santa Fé",
   "usuario_id": 29
 }
+
+### Fazer login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "",
+  "senha": ""
+}
