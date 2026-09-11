@@ -52,7 +52,7 @@ export const listarUsuariosPorID = async (req, res) => {
     );
 
     if (resultado.rows.length === 0) {
-      res.status(404).json({ erro: "usuário não encontrado" });
+      return res.status(404).json({ erro: "usuário não encontrado" });
     }
 
     res.status(200).json(resultado.rows[0]);
@@ -85,7 +85,7 @@ export const atualizarUsuario = async (req, res) => {
 
     res.status(200).json(resultado.rows[0]);
   } catch (error) {
-    if (error.code === "32505") {
+    if (error.code === "23505") {
       return res.status(409).json({ erro: "email já cadastrado" });
     }
 
